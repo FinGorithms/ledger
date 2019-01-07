@@ -17,6 +17,12 @@ namespace ledger.Models
         }
 
         /// <summary>
+        /// Transaction timestamp
+        /// </summary>
+        /// <value></value>
+        public DateTime Timestamp { get; set; }
+
+        /// <summary>
         /// Account ID which this transaction blongs
         /// </summary>
         /// <value></value>
