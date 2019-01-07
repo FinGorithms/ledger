@@ -50,6 +50,6 @@ namespace ledger.Models
         /// Transaction Reference, used to link transactions 
         /// </summary>
         /// <value></value>
-        public Guid Reference { get; set; }
+        public Reference Reference { get; set; }
     }
 }
