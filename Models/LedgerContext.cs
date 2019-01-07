@@ -7,6 +7,14 @@ namespace ledger.Models
 {
     public class LedgerContext : DbContext
     {
+        #region Initialization Code 
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)    
+        {
+            // TODO: Parameterize Following Code
+            optionsBuilder.UseSqlite("Data Source=ledger.db");
+        }
+        #endregion
         #region Models
         /// <summary>
         /// Account Objects
