@@ -7,7 +7,8 @@ namespace ledger
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var db = new LedgerContext();
+            // TODO: Provide Console App for DB Context 
         }
     }
 }
