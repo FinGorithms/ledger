@@ -7,6 +7,7 @@ namespace ledger.Models
 {
     public class LedgerContext : DbContext
     {
+        #region Models
         /// <summary>
         /// Account Objects
         /// </summary>
@@ -25,5 +26,25 @@ namespace ledger.Models
         /// <value></value>
 
         public DbSet<Reference> References { get; set; }
+        #endregion
+
+        #region Account Methods
+        // TODO: Define Insert Method 
+        // TODO: Define Read Account Method     
+        // TODO: Define Search Methods
+        #endregion
+
+        #region Transaction Methods
+        // TODO: Define Insert Method 
+        // TODO: Define Read Account Method     
+        // TODO: Define Search Methods            
+        #endregion
+
+        #region Reference Methods
+        // TODO: Define Insert Method 
+        // TODO: Define Read Account Method     
+        // TODO: Define Search Methods    
+        #endregion
+    
     }
 }
