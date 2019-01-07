@@ -19,11 +19,7 @@ namespace ledger.Models
             set { _id = value;}
         }
         
-        /// <summary>
-        /// Entities subscribed to this reference
-        /// </summary>
-        /// <value></value>
-        public ICollection<Guid> Entities { get; set; }
+   
 
         /// <summary>
         /// Reference Description

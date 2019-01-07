@@ -1,0 +1,11 @@
+C:\Database\RnD\ledger\bin\Debug\netcoreapp2.1\ledger.deps.json
+C:\Database\RnD\ledger\bin\Debug\netcoreapp2.1\ledger.runtimeconfig.json
+C:\Database\RnD\ledger\bin\Debug\netcoreapp2.1\ledger.runtimeconfig.dev.json
+C:\Database\RnD\ledger\bin\Debug\netcoreapp2.1\ledger.dll
+C:\Database\RnD\ledger\bin\Debug\netcoreapp2.1\ledger.pdb
+C:\Database\RnD\ledger\obj\Debug\netcoreapp2.1\ledger.csprojAssemblyReference.cache
+C:\Database\RnD\ledger\obj\Debug\netcoreapp2.1\ledger.csproj.CoreCompileInputs.cache
+C:\Database\RnD\ledger\obj\Debug\netcoreapp2.1\ledger.AssemblyInfoInputs.cache
+C:\Database\RnD\ledger\obj\Debug\netcoreapp2.1\ledger.AssemblyInfo.cs
+C:\Database\RnD\ledger\obj\Debug\netcoreapp2.1\ledger.dll
+C:\Database\RnD\ledger\obj\Debug\netcoreapp2.1\ledger.pdb
