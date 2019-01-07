@@ -8,5 +8,6 @@ namespace ledger.Models
     public class LedgerContext : DbContext
     {
         public DbSet<Account> Accounts { get; set;}
+        public DbSet<Transaction> Transactions { get; set; }
     }
 }
