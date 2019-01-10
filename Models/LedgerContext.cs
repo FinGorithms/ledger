@@ -99,7 +99,19 @@ namespace ledger.Models
             throw new NotImplementedException();
         }
            
-        // TODO: Define Search Methods
+        // TODO: Define Get All Methods
+        public ICollection<Account> GetAccounts()
+        {
+            List<Account> accounts = new List<Account>();
+            using (var db = new LedgerContext())
+            {
+                foreach (var account in db.Accounts)
+                {
+                    accounts.Add(account);
+                }
+            }
+            return accounts;
+        }
         #endregion
 
         #region Transaction Methods
