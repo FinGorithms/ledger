@@ -37,7 +37,11 @@ namespace ledger.Models
         #endregion
 
         #region Account Methods
-        // TODO: Define Insert Method 
+        /// <summary>
+        /// Insert/Update Account
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns>-1 if anything went wrong, and a positive number otherwise</returns>
         public int UpdateAccount(Account account) 
         {
             using(var db = new LedgerContext())
@@ -78,8 +82,12 @@ namespace ledger.Models
             }
         }
 
-        // TODO: Define Read Account Methods
-        // By Account #  
+
+        /// <summary>
+        /// Searches for an account given its number
+        /// </summary>
+        /// <param name="accountNumber"></param>
+        /// <returns>account object found</returns>
         private Account GetAccountByNumber(string accountNumber)
         {
             using(var db = new LedgerContext())
@@ -89,7 +97,11 @@ namespace ledger.Models
             
         }
 
-        // By ID
+        /// <summary>
+        /// Searches for an account given its GUID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>account object found</returns>
         private Account GetAccountByID(Guid id)
         {
             using(var db = new LedgerContext())
@@ -99,7 +111,10 @@ namespace ledger.Models
             throw new NotImplementedException();
         }
            
-        // TODO: Define Get All Methods
+        /// <summary>
+        /// Gets all accounts defined
+        /// </summary>
+        /// <returns>All accounts defined</returns>
         public ICollection<Account> GetAccounts()
         {
             List<Account> accounts = new List<Account>();
@@ -116,13 +131,13 @@ namespace ledger.Models
 
         #region Transaction Methods
         // TODO: Define Insert Method 
-        // TODO: Define Read Account Method     
+        // TODO: Define Read Transaction Method     
         // TODO: Define Search Methods            
         #endregion
 
         #region Reference Methods
         // TODO: Define Insert Method 
-        // TODO: Define Read Account Method     
+        // TODO: Define Read Reference Method     
         // TODO: Define Search Methods    
         #endregion
 
