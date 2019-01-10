@@ -38,7 +38,67 @@ namespace ledger.Models
 
         #region Account Methods
         // TODO: Define Insert Method 
-        // TODO: Define Read Account Method     
+        public int UpdateAccount(Account account) 
+        {
+            using(var db = new LedgerContext())
+            {
+                var _id = account.ID;
+                var _accountNumber = account.AccountNumber;
+                var _sortCode = account.SortCode;
+                Account existingAccount = null;
+
+                if (_id != null)
+                {
+                    existingAccount = GetAccountByID(_id);
+                }
+                else
+                {
+                    existingAccount = GetAccountByNumber(_accountNumber);
+                }
+
+                int count = -1;
+
+                if (existingAccount != null) {
+                    // Update 
+                    var _toUpdate = db.Accounts.SingleOrDefault(a => a.ID == existingAccount.ID);
+                    _toUpdate.AccountNumber = _accountNumber;
+                    _toUpdate.SortCode = _sortCode;
+                    count = db.SaveChanges();
+                }
+                else
+                {
+                    // Insert
+                    db.Accounts.Add(new Account{
+                        AccountNumber = _accountNumber,
+                        SortCode = _sortCode
+                    });
+                    count = db.SaveChanges();
+                }
+                return count;
+            }
+        }
+
+        // TODO: Define Read Account Methods
+        // By Account #  
+        private Account GetAccountByNumber(string accountNumber)
+        {
+            using(var db = new LedgerContext())
+            {
+                return db.Accounts.Where(a => a.AccountNumber == accountNumber).FirstOrDefault();
+            }
+            
+        }
+
+        // By ID
+        private Account GetAccountByID(Guid id)
+        {
+            using(var db = new LedgerContext())
+            {
+                return db.Accounts.Where(a => a.ID == id).FirstOrDefault();
+            }
+            throw new NotImplementedException();
+        }
+           
         // TODO: Define Search Methods
         #endregion
 
@@ -53,6 +113,6 @@ namespace ledger.Models
         // TODO: Define Read Account Method     
         // TODO: Define Search Methods    
         #endregion
-    
+
     }
 }
