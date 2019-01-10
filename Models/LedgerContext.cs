@@ -130,7 +130,45 @@ namespace ledger.Models
         #endregion
 
         #region Transaction Methods
-        // TODO: Define Insert Method 
+        
+        /// <summary>
+        /// Create New Transaction, This object is immutable; should never be updated or deleted
+        /// </summary>
+        /// <param name="transaction"></param>
+        /// <returns>-1 if any exception, and a postive number otherwise</returns>
+        public int CreateTransaction(Transaction transaction)
+        {
+            using (var db = new LedgerContext())
+            {
+                var _id = transaction.ID;
+                var _accountId = transaction.AccountID;
+                var _amount = transaction.Amount;
+                var _debit = transaction.Debit;
+                var _description = transaction.Description;
+                var _reference = transaction.Reference;
+                var _timestamp = transaction.Timestamp;
+
+                if (_timestamp  == null) {
+                    _timestamp = DateTime.Now;
+                }
+
+                int count = -1;
+
+                // Always insert, never update a transaction 
+                db.Transactions.Add(new Transaction{
+                    AccountID = _accountId,
+                    Amount = _amount,
+                    Debit = _debit,
+                    Description = _description,
+                    Reference = _reference,
+                    Timestamp = _timestamp
+                });
+
+                count = db.SaveChanges();
+                return count;
+            }
+            
+        }
         // TODO: Define Read Transaction Method     
         // TODO: Define Search Methods            
         #endregion
