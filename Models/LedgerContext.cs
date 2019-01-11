@@ -189,6 +189,20 @@ namespace ledger.Models
         }
 
         // TODO: an overload method for get all transactions, by passing filter criteria, this may require a new search object
+        public ICollection<Transaction> GetTransactions(ICollection<Search> search)
+        {
+            // TODO: define a way to loop through search entries to filter results 
+            // TODO: define a way to implement and/or operators in search options 
+            List<Transaction> transactions = new List<Transaction>();
+            using (var db = new LedgerContext())
+            {
+                foreach (var transaction in db.Transactions)
+                {
+                    transactions.Add(transaction);
+                }
+            }
+            return transactions;
+        }
         // TODO: Define Read Transaction Method     
         // TODO: Define Search Methods   
         #endregion
