@@ -191,6 +191,7 @@ namespace ledger.Models
         // TODO: an overload method for get all transactions, by passing filter criteria, this may require a new search object
         public ICollection<Transaction> GetTransactions(ICollection<SearchTerm> search)
         {
+            // check http://www.albahari.com/nutshell/predicatebuilder.aspx
             // TODO: define a way to loop through search entries to filter results 
             // TODO: define a way to implement and/or operators in search options 
             // TODO: build final Where Clause 
