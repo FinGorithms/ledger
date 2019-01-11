@@ -193,9 +193,25 @@ namespace ledger.Models
         {
             // TODO: define a way to loop through search entries to filter results 
             // TODO: define a way to implement and/or operators in search options 
+            // TODO: build final Where Clause 
+            var _clauses = search.OrderBy(s => s.Order);
+            string _query = "";
+
+            foreach (var clause  in _clauses)
+            {
+                if (clause.Order == 1)
+                {
+                    _query = clause.Clause;
+                }
+                else 
+                {
+                    _query += " " + clause.SelectionModifier + " " + clause.Clause;
+                }
+            }
             List<Transaction> transactions = new List<Transaction>();
             using (var db = new LedgerContext())
             {
+                return db.Transactions.Where(_query);
                 foreach (var transaction in db.Transactions)
                 {
                     transactions.Add(transaction);
