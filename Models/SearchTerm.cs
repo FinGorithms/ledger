@@ -1,6 +1,6 @@
 namespace ledger.Models
 {
-    public class Search
+    public class SearchTerm
     {
     }
 }
