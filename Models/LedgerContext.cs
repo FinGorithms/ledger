@@ -212,7 +212,8 @@ namespace ledger.Models
             List<Transaction> transactions = new List<Transaction>();
             using (var db = new LedgerContext())
             {
-                return db.Transactions.Where(_query);
+                // code not working yet
+                //return db.Transactions.Where(_query);
                 foreach (var transaction in db.Transactions)
                 {
                     transactions.Add(transaction);
